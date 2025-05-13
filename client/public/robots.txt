@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /cart
+Disallow: /register
+Disallow: /login
+Disallow: /delivery
+Disallow: /delivery/home-delivery
+Disallow: /checkout/payment
+Disallow: /rhythm-game
+
+Allow: /
+
+Sitemap: https://localhost:3000/sitemap.xml

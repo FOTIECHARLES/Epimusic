@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>http://localhost:3000/</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/register</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/login</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/products</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/products/search</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/cart</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/delivery</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/delivery/home-delivery</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/checkout/payment</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/rhythm-game</loc>
+  </url>
+
+</urlset>
