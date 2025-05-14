@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 13 mai 2025 à 10:32
+-- Généré le : mer. 14 mai 2025 à 11:34
 -- Version du serveur : 10.11.11-MariaDB-0ubuntu0.24.04.2
 -- Version de PHP : 8.3.21
 
@@ -100,7 +100,12 @@ INSERT INTO `admin_order` (`id`, `order_number`, `status`, `created_at`, `update
 (59, '4RXDOSTG0C7XS', 'livré', '2025-03-13 14:55:32', '2025-03-13 14:55:32', NULL),
 (60, '4CDM331J9KML8', 'livré', '2025-03-13 14:55:34', '2025-03-13 14:55:34', NULL),
 (61, 'LUS7BBYHSD5HN', 'livré', '2025-03-13 14:58:59', '2025-03-13 14:58:59', NULL),
-(62, 'RZV4LGVGUGLDB', 'livré', '2025-03-13 15:03:47', '2025-03-13 15:03:47', NULL);
+(62, 'RZV4LGVGUGLDB', 'livré', '2025-03-13 15:03:47', '2025-03-13 15:03:47', NULL),
+(63, 'FVGXLISU4AWQ0', 'livré', '2025-05-14 09:34:55', '2025-05-14 09:34:55', NULL),
+(64, 'Z6YVCTM9E799X', 'livré', '2025-05-14 09:37:00', '2025-05-14 09:37:00', NULL),
+(72, '2D1YG9DUVNBB7', 'livré', '2025-05-14 10:15:34', '2025-05-14 10:15:34', NULL),
+(80, 'QLVA8QN91MBSP', 'livré', '2025-05-14 11:13:36', '2025-05-14 11:13:36', NULL),
+(81, '6NAWBFXXIU4VW', 'livré', '2025-05-14 11:14:15', '2025-05-14 11:14:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,7 +133,11 @@ INSERT INTO `admin_order_item` (`id`, `model_id`, `admin_order_id`, `product_id`
 (36, 2, 48, 2, NULL, NULL, 1, 9),
 (39, 3, 51, 3, 'Marron', NULL, 1, 12),
 (40, 1, 52, 1, 'Jaune', NULL, 1, 11),
-(41, 17, 53, 17, 'Noir', NULL, 1, 17);
+(41, 17, 53, 17, 'Noir', NULL, 1, 17),
+(42, 18, 64, 18, NULL, '45', 1, 5),
+(50, 19, 72, 19, NULL, '33', 1, 5),
+(58, 19, 80, 19, NULL, '33', 1, 10),
+(59, 18, 81, 18, NULL, '45', 1, 15);
 
 -- --------------------------------------------------------
 
@@ -197,7 +206,8 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`id`, `user_id`, `created_at`, `updated_at`, `total`, `promo_total`) VALUES
 (19, 2, '2024-09-01 18:45:49', '2024-09-02 11:09:36', 15, 0),
-(22, 4, '2025-03-28 19:58:45', '2025-03-28 21:00:07', 179.8, 0);
+(22, 4, '2025-03-28 19:58:45', '2025-03-28 21:00:07', 179.8, 0),
+(28, 5, '2025-05-14 11:19:42', '2025-05-14 11:19:42', 220, 0);
 
 -- --------------------------------------------------------
 
@@ -234,7 +244,8 @@ INSERT INTO `cart_item` (`id`, `cart_id`, `anonymous_cart_id`, `product_id`, `mo
 (34, NULL, 2, 18, 18, 1, 37.99, NULL, 0),
 (39, NULL, 3, 18, 18, 1, 37.99, NULL, 0),
 (40, 19, NULL, 10, 10, 1, 15, NULL, 0),
-(51, 22, NULL, 1, 1, 2, 89.9, NULL, 0);
+(51, 22, NULL, 1, 1, 2, 89.9, NULL, 0),
+(57, 28, NULL, 11, 11, 10, 22, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -610,7 +621,12 @@ INSERT INTO `order` (`id`, `total_price`, `payment_method`, `payment_status`, `s
 (23, 37.99, 'Credit Card', 'Pending', 'En préparation', '2025-03-13 08:57:17', '2025-03-13 08:58:39', 2.99, 37.99, 40.98, 4),
 (24, 22, NULL, 'Pending', 'Pending', '2025-03-14 13:59:31', '2025-03-14 13:59:31', 5.99, 22, 27.99, 4),
 (25, 59.99, NULL, 'Pending', 'Pending', '2025-03-21 20:02:25', '2025-03-21 20:02:25', 8.98, 59.99, 68.97, 4),
-(26, 179.8, NULL, 'Pending', 'Pending', '2025-03-28 21:00:11', '2025-03-28 21:00:11', 7.18, 179.8, 186.98, 4);
+(26, 179.8, NULL, 'Pending', 'Pending', '2025-03-28 21:00:11', '2025-03-28 21:00:11', 7.18, 179.8, 186.98, 4),
+(27, 349.99, NULL, 'Pending', 'Pending', '2025-05-14 09:30:37', '2025-05-14 09:30:37', 3.59, 349.99, 353.58, 5),
+(28, 265.93, 'Credit Card', 'Pending', 'En préparation', '2025-05-14 09:35:25', '2025-05-14 09:36:12', 20.93, 265.93, 286.86, 5),
+(29, 269.91, 'Credit Card', 'Pending', 'En préparation', '2025-05-14 10:13:52', '2025-05-14 10:14:59', 26.91, 269.91, 296.82, 5),
+(30, 220, NULL, 'Pending', 'Pending', '2025-05-14 10:30:25', '2025-05-14 10:30:25', 59.9, 220, 279.9, 5),
+(31, 198, NULL, 'Pending', 'Pending', '2025-05-14 11:14:57', '2025-05-14 11:14:57', 53.91, 198, 251.91, 5);
 
 -- --------------------------------------------------------
 
@@ -644,7 +660,12 @@ INSERT INTO `order_address` (`id`, `order_id`, `name`, `telephone`, `email`, `ad
 (13, 20, 'Bob Leponge', '1234567890', 'bob@gmail.com', '123 Rue de Test', '', '75000', 'Paris', 'France'),
 (14, 22, 'francis jean', '00 00 00 00 00', 'francis@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
 (15, 23, 'jules cesar', '00 00 00 00 00', 'jules@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
-(16, 25, 'jules cesar', '06 44 00 88 09', 'jules@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France');
+(16, 25, 'jules cesar', '06 44 00 88 09', 'jules@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
+(17, 27, 'test45 test45', '00 00 00 00 00', 'test45@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
+(18, 28, 'test45 test45', '00 00 00 00 00', 'test45@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
+(19, 29, 'test45 test45', '00 00 00 00 00', 'test45@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
+(20, 30, 'test45 test45', '00 00 00 00 00', 'test45@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France'),
+(21, 31, 'test45 test45', '00 00 00 00 00', 'test45@yahoo.fr', '214 Pont de Flandres', '419', '59800', 'Lille', 'France');
 
 -- --------------------------------------------------------
 
@@ -688,7 +709,12 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_name`, `color`, `size`, `q
 (34, 24, 'T-Shirt Thrash Metal Manches Courtes METALLICA \"Ride Back Print\"', 'Noir', NULL, 1, 22, 22, NULL, 0, NULL, 11),
 (35, 25, 'T-Shirt Thrash Metal Manches Courtes METALLICA \"Ride Back Print\"', 'Noir', NULL, 1, 22, 22, NULL, 0, NULL, 11),
 (36, 25, 'Deadpool & Wolverine (OST) - Double vinyle limité rouge/noir et jaune/bleu', NULL, NULL, 1, 37, 37.99, NULL, 0, NULL, 18),
-(37, 26, 'Shiver GCS-1/2 - Guitare Classique', 'Jaune', NULL, 2, 89, 179.8, NULL, 0, NULL, 1);
+(37, 26, 'Shiver GCS-1/2 - Guitare Classique', 'Jaune', NULL, 2, 89, 179.8, NULL, 0, NULL, 1),
+(38, 27, 'Takamine - GTA GC1CENAT Guitare électro-acoustique', 'Jaune', NULL, 1, 349, 349.99, NULL, 0, NULL, 2),
+(39, 28, 'Deadpool & Wolverine (OST) - Double vinyle limité rouge/noir et jaune/bleu', NULL, NULL, 7, 37, 265.93, NULL, 0, NULL, 18),
+(40, 29, 'La Petite Sirène (35ème anniversaire) - Vinyle splatter transparent', NULL, NULL, 9, 29, 269.91, NULL, 0, NULL, 19),
+(41, 30, 'T-Shirt Thrash Metal Manches Courtes METALLICA \"Ride Back Print\"', 'Noir', NULL, 10, 22, 220, NULL, 1, NULL, 11),
+(42, 31, 'T-Shirt Thrash Metal Manches Courtes METALLICA \"Ride Back Print\"', 'Noir', NULL, 9, 22, 198, NULL, 1, NULL, 11);
 
 -- --------------------------------------------------------
 
@@ -843,8 +869,8 @@ INSERT INTO `stock` (`id`, `product_id`, `color_id`, `size_id`, `quantity`) VALU
 (15, 15, 1, NULL, 10),
 (16, 16, 1, NULL, 10),
 (17, 17, 1, NULL, 17),
-(18, 18, NULL, 2, 7),
-(19, 19, NULL, 1, 9),
+(18, 18, NULL, 2, 15),
+(19, 19, NULL, 1, 10),
 (20, 20, NULL, 2, 9),
 (21, 21, NULL, 2, 10),
 (22, 22, NULL, 2, 10),
@@ -921,7 +947,8 @@ INSERT INTO `user` (`id`, `first_name`, `last_name`, `email`, `roles`, `password
 (1, 'admin', 'Admin', 'admin@test.com', '[\"ROLE_ADMIN\"]', '$2y$13$TQHZJOf.udLo4mg1CYVWBe3ewW75I0YbHXNAzRr6sRmnQ7lgE391O', 0),
 (2, 'Test', 'Test', 'test@test.com', '[\"ROLE_USER\"]', '$2y$13$33gjjEmEDHoyneuwUFNd6u.Orm/1dKhlm2W7tuz7hFitbhYGPIQ8O', 0),
 (3, 'Zoé', 'Pilia', 'zoe@test.com', '[\"ROLE_USER\"]', '$2y$13$XATdUbtNX40sCnrUP.MfOOzlSjrJ7taZjVx8oWH7d7AjRf1Rjf6O2', 0),
-(4, 'jules', 'cesar', 'jules@yahoo.fr', '[\"ROLE_ADMIN\"]', '$2y$13$738AITuPQGlgfMAF8/anze5kEYcE0T.Az737UR07K0GcK61JP6qFO', 0);
+(4, 'jules', 'cesar', 'jules@yahoo.fr', '[\"ROLE_ADMIN\"]', '$2y$13$738AITuPQGlgfMAF8/anze5kEYcE0T.Az737UR07K0GcK61JP6qFO', 0),
+(5, 'test45', 'test45', 'test45@yahoo.fr', '[\"ROLE_USER\"]', '$2y$13$crttws0Jo/CMtKtEBnTgKe91k1pBjAMEnUJMxT8112FzgspaxyBb.', 0);
 
 -- --------------------------------------------------------
 
@@ -987,7 +1014,6 @@ ALTER TABLE `admin_order`
 --
 ALTER TABLE `admin_order_item`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `UNIQ_9AD4B98C4584665A` (`product_id`),
   ADD KEY `IDX_9AD4B98C193F6A3E` (`admin_order_id`),
   ADD KEY `IDX_9AD4B98C7975B7E7` (`model_id`);
 
@@ -1192,13 +1218,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT pour la table `admin_order`
 --
 ALTER TABLE `admin_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT pour la table `admin_order_item`
 --
 ALTER TABLE `admin_order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT pour la table `anonymous_cart`
@@ -1216,13 +1242,13 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT pour la table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `cart_item`
 --
 ALTER TABLE `cart_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT pour la table `category`
@@ -1270,19 +1296,19 @@ ALTER TABLE `music_track`
 -- AUTO_INCREMENT pour la table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT pour la table `order_address`
 --
 ALTER TABLE `order_address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT pour la table `product`
@@ -1330,7 +1356,7 @@ ALTER TABLE `transport_provider`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `weight`
@@ -1353,7 +1379,6 @@ ALTER TABLE `address`
 --
 ALTER TABLE `admin_order_item`
   ADD CONSTRAINT `FK_9AD4B98C193F6A3E` FOREIGN KEY (`admin_order_id`) REFERENCES `admin_order` (`id`),
-  ADD CONSTRAINT `FK_9AD4B98C4584665A` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
   ADD CONSTRAINT `FK_9AD4B98C7975B7E7` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`);
 
 --

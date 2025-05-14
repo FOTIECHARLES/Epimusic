@@ -779,8 +779,6 @@ public function update(Request $request, Product $product, EntityManagerInterfac
     {
         $data = json_decode($request->getContent(), true);
 
-        // dd($data);
-
         
         if (!isset($data['products']) || !is_array($data['products'])) {
             return new JsonResponse(['error' => 'Invalid data'], 400);

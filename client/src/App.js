@@ -137,7 +137,7 @@ const Content = () => {
                         element={<ProductDetailsPage />}
                     />
                     <Route path="/cart" element={<CartPage />} />
-                    {/* <Route path="/admin/stock-management" element={<StockManagementPage />} /> */}
+                    <Route path="/admin/stock-management" element={<StockManagementPage />} />
                     <Route
                         path="/filters"
                         element={<FilteredArticles />}
