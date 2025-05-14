@@ -96,7 +96,7 @@ Ce projet nécessite une clé secrète Stripe pour fonctionner. Pour des raisons
 3. Récupérez votre **clé secrète** dans la section "Clés API".
 4. Ajoutez cette clé dans votre fichier `.env` sous la forme suivante :
 
-      ```STRIPE_SECRET_KEY="votre_clé_secrète"
+      STRIPE_SECRET_KEY="votre_clé_secrète"
 
 
 ### Notes supplémentaires
